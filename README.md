@@ -21,8 +21,14 @@ To install this repository and its dependencis, run the following in a terminal:
     cd Time-reversibility
     poetry install
 
-To run the code which generates the data files, run the following:
+To run the code which generates most of the data files, run the following:
 
     poetry shell
-    python data_generation/discrete_data_generation.py
-    python data_generation/continuous_data_generation.py
+    python src/discrete_data_generation.py
+    python src/continuous_data_generation.py
+
+The coloured noise processes are currently written in Matlab and are stored in the `src/noise_generation/` directory. To generate the data, run the `src/noise_generation/noise_generator.m` script.
+
+## Contact
+
+Please contact [Teresa Dalle Nogare](mailto:teresa.dallenogare@sydney.edu.au) with any questions.

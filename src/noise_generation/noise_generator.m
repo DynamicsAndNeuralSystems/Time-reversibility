@@ -5,7 +5,7 @@ m = 1;        % number of the rows of the noise matrix
 n = 7000;     % number of the columns of the noise matrix (number of time series)
 idx0 = 5001;   % number of points I cut (transient dynamics)
 
-path_folder = '../Data_2000_dsct';
+path_folder = '../../Data_2000_dsct';
 %%% Pink noise
 % Generate folder if it does not exist with the name of the process 
 pathToSave = path_folder
