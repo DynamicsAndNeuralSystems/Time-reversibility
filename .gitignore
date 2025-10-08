@@ -1,6 +1,12 @@
+# Data folders
 Data_*_dsct/
 Data_*_ACFDS/
+
+# Mac
 .DS_Store
+
+# Matlab
+*.asv
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
