@@ -56,7 +56,7 @@ data_sine =status
 
 length=int(7000) #length of time series
 n=100 #number of repetitions
-save_to = f"Data_{length-5000}_ACFDS/"
+save_to = f"Data_{length-5000}_dsct/"
 
 if data_gno==True:
     gno=GNO(n=n, length=length)

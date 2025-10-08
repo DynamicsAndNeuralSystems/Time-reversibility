@@ -1,0 +1,40 @@
+clear, clc, close all
+     
+% Parameters
+m = 1;        % number of the rows of the noise matrix 
+n = 5500;     % number of the columns of the noise matrix (number of time series)
+idx0 = 501;   % number of points I cut (transient dynamics)
+
+% Generate folder if it does not exist with the name of the process 
+pathToSave = '../Data_trial';
+folderName = 'PINK';
+
+pathNewFolder = fullfile(pathToSave, folderName);
+
+if ~exist(pathNewFolder, 'dir')
+    mkdir(pathNewFolder);
+    disp(['Folder "', folderName, '" has been created.']);
+else
+    disp(['Folder "', folderName, '" already exists.']);
+end
+
+for i=0:9
+    
+    filename = sprintf('%s_%03d.txt', foldername, i);
+    % Generate noise time series
+    x = pinknoise(m, n); 
+
+    % Cut first idx0 part of the time series
+    x_cut = x(idx0:end);
+
+    % Transform in a coumn vector to save 
+    x_noise = x_cut';
+
+    writematrix(x_noise, filename)
+    
+    % 
+end
+
+
+
+
