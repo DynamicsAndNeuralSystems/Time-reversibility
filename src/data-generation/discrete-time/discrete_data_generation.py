@@ -7,17 +7,16 @@
 #                                                               #
 #################################################################
 
-from d_noises import *
-from d_arma import *
-from d_henon import *
-from d_deterministic_models import *
-from d_logistic import *
-from d_conservative_maps import *
-from d_quadratic import *
-from d_stochastic_sine_map import *
-from bounded_random_walk import *
+from noises import *
+from arma import *
+from henon import *
+from deterministic_models import *
+from logistic import *
+from conservative_maps import *
+from quadratic import *
+from stochastic_sine_map import *
 
-status = True
+status = False
 # coloured noise simulated in MATLAB (pink, brown, violet)
 ## iid noise
 data_gno=status

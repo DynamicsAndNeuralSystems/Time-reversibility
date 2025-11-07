@@ -7,25 +7,25 @@
 #                                                               #
 #################################################################
 
-from c_ornstein_uhlenbeck import *
-from c_dissipative_flows import *
-from c_mackeyglass import *
-from c_stochastic_dissipative_flows import *
+from ornstein_uhlenbeck import *
+from dissipative_flows import *
+from mackeyglass import *
+from stochastic_dissipative_flows import *
 from bounded_random_walk import *
-from c_vanderpol_oscillator import *
-from c_stochastic_vanderpol import *
+from vanderpol_oscillator import *
+from stochastic_vanderpol import *
 
 
-status = True
-data_vdp = True
-data_oscillator = True
-data_lorenz = True
-data_rossler = True
-data_stochLorenz = True #
-data_stochasticVDP = True #
-data_ou = True #
-data_brw_cont =True
-data_MackeyGlass17 = True #
+status = False
+data_vdp = status
+data_oscillator = status
+data_lorenz = status
+data_rossler = status
+data_stochLorenz = status 
+data_stochasticVDP = status 
+data_ou = status 
+data_brw_cont = status
+data_MackeyGlass17 = status 
 
 length = int(1e4) # length of time series (dt=1e-2)
 n = 100 #number of repetitions
