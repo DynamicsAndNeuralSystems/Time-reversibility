@@ -35,7 +35,7 @@ model_keywords={'GNO': ['reversible'], 'UNO': ['reversible'], 'PINK': ['reversib
                 'MODA': ['irreversible'], 'LLOG': ['irreversible'],
                 'SINE_STOCH': ['irreversible']}
 
-lenght_ts=2000
+lenght_ts=5000
 
 # Extract path of data, sort data by index, separate forward from backward time series and associate keywords each time series
 def extract_index(filename):
@@ -46,7 +46,7 @@ filepaths=[]
 filepaths_frwd=[]
 filepaths_bkwd=[]
 for model_name in models:
-    model_dir = os.path.join(f'../Data_generation/Robustness_data/Data_{lenght_ts}_dsct', model_name)
+    model_dir = os.path.join(f'../../../time-series/data_{lenght_ts}_dsct', model_name)
     files = os.listdir(model_dir)   #list all files and directories in a directory
     files = sorted(files, key=lambda f: extract_index(f))   #sort by index
     files_frwd = [file for file in files if 'reverse' not in os.path.basename(file)]    #forward time series
