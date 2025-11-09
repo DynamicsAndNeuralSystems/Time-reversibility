@@ -1,0 +1,62 @@
+# === Figure & Axes ===
+figure.figsize: 8, 5
+figure.dpi: 100
+axes.titlesize: 32
+axes.labelsize: 32
+axes.labelweight: normal
+axes.grid: False
+axes.grid.which: both
+axes.spines.top: False
+axes.spines.right: False
+
+# === Font settings ===
+font.family: sans-serif
+font.sans-serif: Helvetica
+# font.size: 32
+#font.family: serif
+#font.serif: Computer Modern Roman
+
+# === LaTeX text settings ===
+text.usetex: False
+
+#text.usetex: true
+#text.latex.preamble: \usepackage{amsmath} \usepackage{bm}
+
+text.usetex: False
+font.family: sans-serif
+font.sans-serif: Helvetica
+
+
+
+# === Lines ===
+lines.linewidth: 2
+lines.markersize: 6
+
+# === Legend ===
+legend.fontsize: 32
+legend.frameon: False
+legend.loc: upper right
+
+# === Ticks ===
+xtick.direction: out
+ytick.direction: out
+xtick.labelsize: 32
+ytick.labelsize: 32
+xtick.major.size: 6
+ytick.major.size: 6
+xtick.minor.size: 4
+ytick.minor.size: 4
+
+# === Grid ===
+grid.linestyle: --
+grid.linewidth: 0.5
+grid.alpha: 0.6
+grid.color: 'lightgray'
+axes.axisbelow: True 
+
+# === Savefig ===
+savefig.dpi: 300
+savefig.transparent: True
+
+
+axes.prop_cycle: cycler("color", ["#3498db", "#e67e22", "#2ecc71", "#e74c3c", "#9b59b6", "#1abc9c", "#f1c40f", "#34495e", "#e84393", "#00cec9", "#fdcb6e", "#6c5ce7", "#fab1a0", "#81ecec", "#ffeaa7", "#d63031"])
