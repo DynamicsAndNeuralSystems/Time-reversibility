@@ -1,4 +1,18 @@
+####################################################################
+#                                                                  #
+#   Author:   Teresa Dalle Nogare                                  #
+#   Date:     March 2025                                           #
+#                                                                  #
+#   Summary: Function BF_PointOfCrossing by MATLAB implementation  #
+#   BF_PointOfCrossing.m from HCTSA toolbox by Ben Fulcher         #
+#                                                                  #
+####################################################################
+
+
 import numpy as np
+
+
+
 
 def BF_PointOfCrossing(x, threshold, oneIndexing=True):
     """
