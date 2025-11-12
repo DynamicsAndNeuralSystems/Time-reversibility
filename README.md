@@ -43,10 +43,12 @@ Matrices obtained from the HCTSA analysis of the time series above are contained
 - `HCTSA_bkwd.mat` file resulting from the HCTSA analysis of reversed time series;
 
 ### Analysis 
+Code for the analysis of the feature difference dataset `df_TS_DataMat_diff.csv` is in the [python](/src/main/python/) folder.
+
+#### Time-reversal invariant features
 
 
 
-### Analysis
 ## 2. From scratch
 ### Data generation
 To run the python code which generates most of the data files, run the following:
@@ -55,6 +57,9 @@ To run the python code which generates most of the data files, run the following
     uv run src/main/data-generation/continuous-time/continuous_data_generation.py
 
 The coloured noise processes are currently written in Matlab and are stored in the `src/main/data-generation/noise_generation/` directory. To generate the data, run the `src/main/data-generation/noise_generation/noise_generator.m` script.
+
+### HCTSA analysis
+To run the analysis you need to have [hctsa](https://github.com/benfulcher/hctsa) installed.
 
 ### Notes on package management
 
