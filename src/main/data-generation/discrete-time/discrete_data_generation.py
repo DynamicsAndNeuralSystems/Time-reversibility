@@ -16,7 +16,7 @@ from conservative_maps import *
 from quadratic import *
 from stochastic_sine_map import *
 
-status = False
+status = True
 # coloured noise simulated in MATLAB (pink, brown, violet)
 ## iid noise
 data_gno=status
