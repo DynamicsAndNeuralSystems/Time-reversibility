@@ -29,7 +29,7 @@ Data used in "A data-driven approach to identifying statistical indicators of te
 
 #### Pre-processed data
 The folder `data-tr/main-analysis/data-analysis/` contains:
-- `df_TS_DataMat_diff.csv`: pre-processed dataset with the set of feature differences, $/Delta f_i = f_i - /tilde{f_i}$, $i/in/{1,...,6082/}$ between a feature $f_i$ computed on forward time series and reversed, $/tilde f_i$;
+- `df_TS_DataMat_diff.csv`: pre-processed dataset with the set of feature differences, $\Delta f_i = f_i -\tilde{f_i}$, $i\in\{1,...,6082\}$ between a feature $f_i$ computed on forward time series and reversed, $\tilde f_i$;
 - `common_ops.csv`: set of features;
 
 
