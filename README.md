@@ -36,11 +36,11 @@ The folder `data-tr/main-analysis/data-analysis/` contains:
 #### Time series
 Time series of the simulated discrete-time and continuous-time processes are stored in `data-tr/main-analysis/time-series/data-dsct` and `data-tr/main-analysis/time-series/data-cnt`, respectively. Each folder named after a process contains 100 realizations 5000-samples long forward in time (files named `[process_label]_[idx_ts].txt`) and the respective 100 realizations flipped in time (`[process_label]_reverse_[idx_ts].txt`).
 
-#### HCTSA matrices
-Matrices obtained from the HCTSA analysis of the time series above are contained in `data-tr/main-analysis/hctsa/hctsa-dsct` and `data-tr/main-analysis/hctsa/hctsa-cnt`, respectively. Each folder contains:
+#### _hctsa_ matrices
+Matrices obtained from the _hctsa_ analysis of the time series above are contained in `data-tr/main-analysis/hctsa/hctsa-dsct` and `data-tr/main-analysis/hctsa/hctsa-cnt`, respectively. Each folder contains:
 
-- `HCTSA_frwd.mat` file resulting from the HCTSA analysis of forward time series;
-- `HCTSA_bkwd.mat` file resulting from the HCTSA analysis of reversed time series;
+- `HCTSA_frwd.mat` file resulting from the _hctsa_ analysis of forward time series;
+- `HCTSA_bkwd.mat` file resulting from the _hctsa_ analysis of reversed time series;
 
 ### Analysis 
 Code for the analysis of the feature difference dataset `df_TS_DataMat_diff.csv` is in the [python](/src/main/python/) folder.
@@ -77,8 +77,17 @@ To run the python code which generates most of the data files, run the following
 
 The coloured noise processes are currently written in Matlab and are stored in the `src/main/data-generation/noise_generation/` directory. To generate the data, run the `src/main/data-generation/noise_generation/noise_generator.m` script.
 
-### HCTSA analysis
-To run the analysis you need to have [hctsa](https://github.com/benfulcher/hctsa) installed.
+### _hctsa_ analysis
+To run the analysis you need to have [_hctsa_](https://github.com/benfulcher/hctsa) installed.
+#### Step 1
+**Set-up time series**: input files `INP_ts_[dsct/cnt]_[frwd/bkwd].txt` with the path of time series for the _hctsa_ run can be created using [INP_file_generation_dsct.py](src/main/analysis-_hctsa_/run/INP_file_generation_dsct.py) and [INP_file_generation_cnt.py](src/main/analysis-hctsa/run/INP_file_generation_cnt.py) files.
+
+**Set-up features**: input files with operations [INP_ops.txt](src/main/analysis-hctsa/run/INP_ops.txt) and [INP_mops.txt](src/main/analysis-hctsa/run/INP_mops.txt) for the _hctsa_ run.
+
+#### Step 2
+Run the __hctsa__ analysis.
+
+#### Step 3
 
 ### Notes on package management
 
