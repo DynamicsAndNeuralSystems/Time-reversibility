@@ -51,11 +51,11 @@ The notebook [1-zero_features.ipynb](src/main/python/1-zero_features.ipynb) extr
 #### Statistics for reversibility
 The notebook [2-1NN_classification.ipynb](src/main/python/2-1NN_classification.ipynb) assigns the accuracy of classification between the reversible and irreversible groups to each feature $f_i$. We used the performance of a 1-nearest neighbor (1-NN) classifier in the space of each $f_i$, evaluated using a leave-one-process-out cross-validation strategy.
 
-The notebook [3-feature_selection.ipynb](src/main/python/3-feature_selection.ipynb) extracts the set of top-performing features, characterized by an accuracy greater than a given threshold. We chose 72% to encompass a sufficiently large set of features for analysis.
+The notebook [3-feature_selection.ipynb](src/main/python/3-feature_selection.ipynb) extracts the set of top-performing features, characterized by an accuracy greater than a given threshold. We chose 72% to encompass a sufficiently large set of features for analysis. Distributions of $|\Delta f_i|$ can be reproduced using the notebook [6-boxes.ipynb](src/main/python/4-boxes.ipynb).
 <p align="center">
-  <img src="figures-paper/Distribution.pdf" width="400">
+  <img src="src/figures-paper/Distribution.png" width="600">
 </p>
-![Alt text]()
+
 
 
 ## 2. From scratch
