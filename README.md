@@ -51,11 +51,21 @@ The notebook [1-zero_features.ipynb](src/main/python/1-zero_features.ipynb) extr
 #### Statistics for reversibility
 The notebook [2-1NN_classification.ipynb](src/main/python/2-1NN_classification.ipynb) assigns the accuracy of classification between the reversible and irreversible groups to each feature $f_i$. We used the performance of a 1-nearest neighbor (1-NN) classifier in the space of each $f_i$, evaluated using a leave-one-process-out cross-validation strategy.
 
-The notebook [3-feature_selection.ipynb](src/main/python/3-feature_selection.ipynb) extracts the set of top-performing features, characterized by an accuracy greater than a given threshold. We chose 72% to encompass a sufficiently large set of features for analysis. Distributions of $|\Delta f_i|$ can be reproduced using the notebook [6-boxes.ipynb](src/main/python/4-boxes.ipynb).
+The notebook [3-feature_selection.ipynb](src/main/python/3-feature_selection.ipynb) extracts the set of top-performing features, characterized by an accuracy greater than a given threshold. We chose 72% to encompass a sufficiently large set of features for analysis. Distributions of $|\Delta f_i|$ can be reproduced using the notebook [4-boxes.ipynb](src/main/python/4-boxes.ipynb).
 <p align="center">
   <img src="src/figures-paper/Distribution.png" width="600">
 </p>
 
+#### Statistical signatures of irreversibility are process-dependent
+The notebook [5-min_max.ipynb](src/main/python/5-min_max.ipynb) analyses the strength and weaknesses of diverse top-performing features in detecting the reversibility of specific simulated processes computing the accuracy of classification per process (referred to as "left-out accuracy"). The notebook can be used to reproduce figures (a) and (d) below while distributions of $|\Delta f|$ in (b) and (c) can be reproduced using the notebook [4-boxes.ipynb](src/main/python/4-boxes.ipynb).
+<p align="center">
+  <img src="src/figures-paper/Min-Max.png" width="600">
+</p>
+
+#### Additional visualizations
+The notebook [6-inspect_good_features.ipynb](src/main/python/6-inspect_good_features.ipynb) contains a hierarchical clustering analysis to identify similarities across features.
+
+The notebook [7-plot_distributions.ipynb](src/main/python/7-plot_distributions.ipynb) contains an alternative plot of the distribution of $|\Delta f|$ per process.
 
 
 ## 2. From scratch
