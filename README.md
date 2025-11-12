@@ -29,8 +29,8 @@ Data used in "A data-driven approach to identifying statistical indicators of te
 
 #### Pre-processed data
 The folder `data-tr/main-analysis/data-analysis/` contains:
-- `df_TS_DataMat_diff.csv`: pre-processed dataset with the set of feature differences, $\Delta f_i = f_i -\tilde{f_i}$, $i\in\{1,...,6082\}$ between a feature $f_i$ computed on forward time series and reversed, $\tilde f_i$;
-- `common_ops.csv`: set of features;
+- `df_TS_DataMat_diff.csv`: pre-processed dataset of feature differences, $\Delta f_i = f_i -\tilde{f_i}$, $i\in\{1,...,6082\}$ between a feature $f_i$ computed on forward time series and reversed, $\tilde f_i$;
+- `common_ops.csv`: set of features after pre-processing;
 
 
 #### Time series
@@ -46,7 +46,13 @@ Matrices obtained from the HCTSA analysis of the time series above are contained
 Code for the analysis of the feature difference dataset `df_TS_DataMat_diff.csv` is in the [python](/src/main/python/) folder.
 
 #### Time-reversal invariant features
+The notebook [1-zero_features.ipynb](src/main/python/1-zero_features.ipynb) extracts features that are insensitive to time reversibility.
 
+#### Statistics for reversibility
+The notebook [2-1NN_classification.ipynb](src/main/python/2-1NN_classification.ipynb) assigns the accuracy of classification between the reversible and irreversible groups to each feature $f_i$. We used the performance of a 1-nearest neighbor (1-NN) classifier in the space of each $f_i$, evaluated using a leave-one-process-out cross-validation strategy.
+
+The notebook [3-feature_selection.ipynb](src/main/python/3-feature_selection.ipynb) extracts the set of top-performing features, characterized by an accuracy greater than a given threshold. We chose 72% to encompass a sufficiently large set of features for analysis.
+![Alt text](figures-paper/Distribution.pdf)
 
 
 ## 2. From scratch
