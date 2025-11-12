@@ -1,9 +1,9 @@
-# Time-reversibility
+# A data-driven approach to identifying statistical indicators of temporal asymmetry
+This repository contains all code needed to reproduce analyses presented in our preprint "**A data-driven approach to identifying statistical indicators of temporal asymmetry**". 
+Time series and pre-processesd data are openly available (**zenodo**).
+The repository also contains code for generating data and running the analysis from scratch.
 
-## Data generation
-Folder contains code to generate time-series dataset of both discrete-time and continuous-time processes.
-
-## Installation
+# Installation
 
 Python dependencies for this repository are managed via [uv](https://docs.astral.sh/uv/). To install uv on Mac/Linux, run the following command in your terminal:
 
@@ -22,12 +22,18 @@ To install this repository and its dependencis, run the following in a terminal:
     cd Time-reversibility
     uv sync
 
-## Usage (Teresa to update this with further instruction)
+# Usage
+## 1. Using supplied pre-processed data to reproduce results
+### Data availability
+Data used in "A data-driven approach to identifying statistical indicators of temporal asymmetry" is available at **zenodo**. To run the analysis, place the folder `data-time-reversibility` into the `Time-reversibility` repo.
 
+Time series of the simulated processes are stored in `data-time-reversibility\main-analysis`
+## 2. From scratch
+### Data generation
 To run the python code which generates most of the data files, run the following:
 
     uv run src/main/data-generation/discrete-time/discrete_data_generation.py
-    uv run src/main/data-generation/discrete-time/continuous_data_generation.py
+    uv run src/main/data-generation/continuous-time/continuous_data_generation.py
 
 The coloured noise processes are currently written in Matlab and are stored in the `src/main/data-generation/noise_generation/` directory. To generate the data, run the `src/main/data-generation/noise_generation/noise_generator.m` script.
 
