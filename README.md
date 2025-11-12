@@ -37,13 +37,10 @@ The folder `data-tr\main-analysis\data-analysis\` contains:
 Time series of the simulated discrete-time and continuous-time processes are stored in `data-tr\main-analysis\time-series\data-dsct` and `data-tr\main-analysis\time-series\data-cnt`, respectively. Each folder named after a process contains 100 realizations 5000-samples long forward in time (files named `[process_label]_[idx_ts].txt`) and the respective 100 realizations flipped in time (`[process_label]_reverse_[idx_ts].txt`).
 
 #### HCTSA matrices
-**Attention to the paths in hctsa.mat and the INP_ts files**
-Matrices obtained from the HCTSA analysis of the time series above are contained in `data-tr\main-analysis\hctsa\hctsa-dsct` and `data-tr\main-analysis\hctsa\hctsa-cnt`, respectively. Each folder contains 4 subfolders:
+Matrices obtained from the HCTSA analysis of the time series above are contained in `data-tr\main-analysis\hctsa\hctsa-dsct` and `data-tr\main-analysis\hctsa\hctsa-cnt`, respectively. Each folder contains:
 
-- **frwd**: contains the `HCTSA.mat` file resulting from the HCTSA analysis of forward time series;
-- **bkwd**: contains the `HCTSA.mat` file resulting from the HCTSA analysis of reversed time series;
-- **diff**:
-- **tot**:
+- `HCTSA_frwd.mat` file resulting from the HCTSA analysis of forward time series;
+- `HCTSA_bkwd.mat` file resulting from the HCTSA analysis of reversed time series;
 
 
 ### Analysis
