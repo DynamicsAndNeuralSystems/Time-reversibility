@@ -16,7 +16,7 @@ from vanderpol_oscillator import *
 from stochastic_vanderpol import *
 
 
-status = False
+status = True
 data_vdp = status
 data_oscillator = status
 data_lorenz = status

@@ -2,25 +2,22 @@
 name = "time-reversibility"
 version = "0.0.1"
 description = "Generate time-series data for reversible and irreversible processes"
-authors = [
-    {name = "Teresa Dalle Nogare",email = "teresa.dallenogare@sydney.edu.au"}
-]
-readme = "README.md"
+authors = [{ name = "Teresa Dalle Nogare", email = "teresa.dallenogare@sydney.edu.au" }]
 requires-python = ">=3.11"
+readme = "README.md"
 dependencies = [
     "numpy (>=2.3.3,<3.0.0)",
     "pandas (>=2.3.3,<3.0.0)",
     "statsmodels (>=0.14.5,<0.15.0)",
     "sdeint (>=0.3.0,<0.4.0)",
     "scipy (>=1.16.2,<2.0.0)",
-    "tqdm (>=4.67.1,<5.0.0)"
+    "tqdm (>=4.67.1,<5.0.0)",
+    "seaborn>=0.13.2",
 ]
 
-[tool.poetry]
-package-mode = false
-packages = [
-]
+[tool.uv]
+package = false
 
 [build-system]
-requires = ["poetry-core>=2.0.0,<3.0.0"]
-build-backend = "poetry.core.masonry.api"
+requires = ["hatchling"]
+build-backend = "hatchling.build"
