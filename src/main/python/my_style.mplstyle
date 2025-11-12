@@ -12,21 +12,9 @@ axes.spines.right: False
 # === Font settings ===
 font.family: sans-serif
 font.sans-serif: Helvetica
-# font.size: 32
-#font.family: serif
-#font.serif: Computer Modern Roman
 
 # === LaTeX text settings ===
 text.usetex: False
-
-#text.usetex: true
-#text.latex.preamble: \usepackage{amsmath} \usepackage{bm}
-
-text.usetex: False
-font.family: sans-serif
-font.sans-serif: Helvetica
-
-
 
 # === Lines ===
 lines.linewidth: 2
