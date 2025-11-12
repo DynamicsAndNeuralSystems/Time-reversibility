@@ -18,7 +18,7 @@ after installing uv (if you're on linux and you have a `.bashrc` instead of a `.
 
 To install this repository and its dependencis, run the following in a terminal:
     
-    git clone git@github.com:teresadallenogare/Time-reversibility.git
+    git clone git@github.com:teresa-dn/Time-reversibility.git
     cd Time-reversibility
     uv sync
 
