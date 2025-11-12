@@ -28,7 +28,7 @@ To install this repository and its dependencis, run the following in a terminal:
 Data used in "A data-driven approach to identifying statistical indicators of temporal asymmetry" is available at **zenodo**. To run the analysis, place the folder `data-tr` into the `Time-reversibility` repo.
 
 #### Pre-processed data
-The folder [data_analysis](Time-reversibility/data-tr/main-analysis/data-analysis) contains:
+The folder `data-tr\main-analysis\data-analysis\` contains:
 - `df_TS_DataMat_diff.csv`: pre-processed dataset with the set of feature differences, $\Delta f_i = f_i - \tilde{f_i}$, $i\in\{1,...,6082\}$ between a feature $f_i$ computed on forward time series and reversed, $\tilde f_i$;
 - `common_ops.csv`: set of features;
 
