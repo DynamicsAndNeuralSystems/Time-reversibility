@@ -16,6 +16,10 @@ You may also want to install shell autocompletion for ease of use, which you can
 
 after installing uv (if you're on linux and you have a `.bashrc` instead of a `.bash_profile`, change the above accordingly).
 
+Alternatively, you can install uv via brew
+
+    brew install uv
+
 To install this repository and its dependencis, run the following in a terminal:
     
     git clone git@github.com:teresa-dn/Time-reversibility.git
@@ -31,7 +35,6 @@ Data used in "A data-driven approach to identifying statistical indicators of te
 The folder `data-tr/main-analysis/data-analysis/` contains:
 - `df_TS_DataMat_diff.csv`: pre-processed dataset of feature differences, $\Delta f_i = f_i -\tilde{f_i}$, $i\in\{1,...,6082\}$ between a feature $f_i$ computed on forward time series and reversed, $\tilde f_i$;
 - `common_ops.csv`: set of features after pre-processing;
-
 
 #### Time series
 Time series of the simulated discrete-time and continuous-time processes are stored in `data-tr/main-analysis/time-series/data-dsct` and `data-tr/main-analysis/time-series/data-cnt`, respectively. Each folder named after a process contains 100 realizations 5000-samples long forward in time (files named `[process_label]_[idx_ts].txt`) and the respective 100 realizations flipped in time (`[process_label]_reverse_[idx_ts].txt`).
@@ -70,6 +73,11 @@ The notebook [7-plot_distributions.ipynb](src/main/python/7-plot_distributions.i
 
 ## 2. From scratch
 ### Data generation
+If you want to run the code from scratch, generating your own time series and analysing them through _hctsa_ you should start by making the `data-tr` directory. 
+
+    cd Time-reversibility
+    mkdir data-tr
+
 To run the python code which generates most of the data files, run the following:
 
     uv run src/main/data-generation/discrete-time/discrete_data_generation.py

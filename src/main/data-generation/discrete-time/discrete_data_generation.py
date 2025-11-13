@@ -16,10 +16,12 @@ from conservative_maps import *
 from quadratic import *
 from stochastic_sine_map import *
 
-status = True
+
+import os
+status = False
 # coloured noise simulated in MATLAB (pink, brown, violet)
 ## iid noise
-data_gno=status
+data_gno=True
 data_uno=status
 
 ## autoregressive
@@ -55,7 +57,29 @@ data_sine =status
 
 length=int(1e4) # length of time series (actual length + transient)
 n=100 #number of repetitions
-save_to = f"Data_{length-5000}_dsct/"  # folder to save data (specify actual length without transient)
+
+cwd = os.getcwd()
+
+
+dir_data = os.path.join(cwd, 'data-tr/')
+# check if folder exists
+if not os.path.exists(dir_data):
+    os.mkdir(dir_data)
+
+# create time-series data folder
+dir_time_series = os.path.join(dir_data, 'time-series')
+if not os.path.exists(dir_time_series):
+    os.mkdir(dir_time_series)
+
+# create discrete data folder
+dir_data_dsct = os.path.join(dir_time_series, 'data-dsct')
+if not os.path.exists(dir_data_dsct):
+    os.mkdir(dir_data_dsct)
+
+
+save_to = dir_data_dsct  # folder to save data (specify actual length without transient)
+
+os.makedirs( save_to, exist_ok=True)
 
 if data_gno==True:
     gno=GNO(n=n, length=length)

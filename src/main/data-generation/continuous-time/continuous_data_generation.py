@@ -14,10 +14,10 @@ from stochastic_dissipative_flows import *
 from bounded_random_walk import *
 from vanderpol_oscillator import *
 from stochastic_vanderpol import *
+import os
 
-
-status = True
-data_vdp = status
+status = False
+data_vdp = True
 data_oscillator = status
 data_lorenz = status
 data_rossler = status
@@ -29,7 +29,29 @@ data_MackeyGlass17 = status
 
 length = int(1e4) # length of time series (dt=1e-2)
 n = 100 #number of repetitions
-save_to = f"Data_{length-5000}_ACFDS/"
+
+cwd = os.getcwd()
+
+
+dir_data = os.path.join(cwd, 'data-tr/')
+# check if folder exists
+if not os.path.exists(dir_data):
+    os.mkdir(dir_data)
+
+# create time-series data folder
+dir_time_series = os.path.join(dir_data, 'time-series')
+if not os.path.exists(dir_time_series):
+    os.mkdir(dir_time_series)
+
+# create discrete data folder
+dir_data_cnt = os.path.join(dir_time_series, 'data-cnt')
+if not os.path.exists(dir_data_cnt):
+    os.mkdir(dir_data_cnt)
+
+
+save_to = dir_data_cnt  # folder to save data (specify actual length without transient)
+
+os.makedirs( save_to, exist_ok=True)
 
 if data_vdp==True:
     vdp=VanDerPol(n=n, length=length)
