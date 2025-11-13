@@ -14,7 +14,8 @@
 myStartingDir = pwd;
 
 % Load paths for the hctsa package:
-cd('/home/tdal0054/software/hctsa/')
+path = % set path to hctsa directory
+cd(path)
 startup
 
 % Move Matlab back to the working PBS directory

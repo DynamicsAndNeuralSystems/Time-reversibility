@@ -4,10 +4,10 @@
 # USER INPUT:
 # -------------------------------------------
 # Set range of ts_ids to calculate:
-tsMin=1
-tsMax=2600
+tsMin=XXXX
+tsMax=XXXX
 # Set number of time series to calculate per job
-numPerJob=100
+numPerJob=XXXX
 # -------------------------------------------
 
 # Calculate the number of jobs required
