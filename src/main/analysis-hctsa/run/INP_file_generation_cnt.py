@@ -37,11 +37,12 @@ def extract_index(filename):
     match = re.search(r'(\d{3})', filename)
     return int(match.group()) if match else float('inf')
 
+cwd = os.getcwd()
 filepaths=[]
 filepaths_frwd=[]
 filepaths_bkwd=[]
 for model_name in models:
-    model_dir = os.path.join(f'../../../time-series/data_{lenght_ts}_ACFDS', model_name)
+    model_dir = os.path.join(cwd, 'data-tr/time-series/data-cnt', model_name)
     files = os.listdir(model_dir)   #list all files and directories in a directory
     files = sorted(files, key=lambda f: extract_index(f))   #sort by index
     files_frwd = [file for file in files if 'reverse' not in os.path.basename(file)]    #forward time series
@@ -64,19 +65,17 @@ for model_name in models:
 
 # Write an input file with both forward and reversed time series INP_ts.txt
 cwd=os.getcwd()
-input_dir=cwd+'/INP_ts_files_ACFDS'
+input_dir=cwd+'/src/main/analysis-hctsa/run/INP_ts_files'
 if not os.path.exists(input_dir):
     os.mkdir(input_dir)
-with open(os.path.join(input_dir,f"INP_ts_{lenght_ts}_ACFDS.txt"), 'w') as f:
-    for l in filepaths:
-        f.write(l + "\n")
+
 
 # Write an input file with forward time series INP_ts_frwd.txt
-with open(os.path.join(input_dir,f"INP_ts_{lenght_ts}_ACFDS_frwd.txt"), 'w') as f:
+with open(os.path.join(input_dir,f"INP_ts_cnt_frwd.txt"), 'w') as f:
     for l in filepaths_frwd:
         f.write(l + "\n")
 
 # Write an input file with reversed time series INP_ts_bkwd.txt
-with open(os.path.join(input_dir,f"INP_ts_{lenght_ts}_ACFDS_bkwd.txt"), 'w') as f:
+with open(os.path.join(input_dir,f"INP_ts_cnt_bkwd.txt"), 'w') as f:
     for l in filepaths_bkwd:
         f.write(l + "\n")

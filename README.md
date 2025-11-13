@@ -16,6 +16,10 @@ You may also want to install shell autocompletion for ease of use, which you can
 
 after installing uv (if you're on linux and you have a `.bashrc` instead of a `.bash_profile`, change the above accordingly).
 
+Alternatively, you can install uv via brew
+
+    brew install uv
+
 To install this repository and its dependencis, run the following in a terminal:
     
     git clone git@github.com:teresa-dn/Time-reversibility.git
@@ -31,7 +35,6 @@ Data used in "A data-driven approach to identifying statistical indicators of te
 The folder `data-tr/main-analysis/data-analysis/` contains:
 - `df_TS_DataMat_diff.csv`: pre-processed dataset of feature differences, $\Delta f_i = f_i -\tilde{f_i}$, $i\in\{1,...,6082\}$ between a feature $f_i$ computed on forward time series and reversed, $\tilde f_i$;
 - `common_ops.csv`: set of features after pre-processing;
-
 
 #### Time series
 Time series of the simulated discrete-time and continuous-time processes are stored in `data-tr/main-analysis/time-series/data-dsct` and `data-tr/main-analysis/time-series/data-cnt`, respectively. Each folder named after a process contains 100 realizations 5000-samples long forward in time (files named `[process_label]_[idx_ts].txt`) and the respective 100 realizations flipped in time (`[process_label]_reverse_[idx_ts].txt`).
@@ -70,6 +73,11 @@ The notebook [7-plot_distributions.ipynb](src/main/python/7-plot_distributions.i
 
 ## 2. From scratch
 ### Data generation
+If you want to run the code from scratch, generating your own time series and analysing them through _hctsa_ you should start by making the `data-tr` directory. 
+
+    cd Time-reversibility
+    mkdir data-tr
+
 To run the python code which generates most of the data files, run the following:
 
     uv run src/main/data-generation/discrete-time/discrete_data_generation.py
@@ -79,15 +87,21 @@ The coloured noise processes are currently written in Matlab and are stored in t
 
 ### _hctsa_ analysis
 To run the analysis you need to have [_hctsa_](https://github.com/benfulcher/hctsa) installed.
-#### Step 1
-**Set-up time series**: input files `INP_ts_[dsct/cnt]_[frwd/bkwd].txt` with the path of time series for the _hctsa_ run can be created using [INP_file_generation_dsct.py](src/main/analysis-_hctsa_/run/INP_file_generation_dsct.py) and [INP_file_generation_cnt.py](src/main/analysis-hctsa/run/INP_file_generation_cnt.py) files.
+
+#### Step 1: prepare input files in the [run](src/main/analysis-hctsa/run/) folder 
+**Set-up time series**: to create input files `INP_ts_[dsct/cnt]_[frwd/bkwd].txt` with the path of time series for the _hctsa_ run, run the following:
+
+    uv run src/main/analysis-hctsa/run/INP_file_generation_dsct.py
+    uv run src/main/analysis-hctsa/run/INP_file_generation_cnt.py
 
 **Set-up features**: input files with operations [INP_ops.txt](src/main/analysis-hctsa/run/INP_ops.txt) and [INP_mops.txt](src/main/analysis-hctsa/run/INP_mops.txt) for the _hctsa_ run.
 
-#### Step 2
+#### Step 2: run the _hctsa_ analysis
 Run the _hctsa_ analysis following the instructions in the comprehensive [documentation](https://time-series-features.gitbook.io/hctsa-manual/).
 
-#### Step 3
+Save the outcomes `HCTSA_frwd.mat` and `HCTSA_bkwd.mat` matrices in a folder `data-tr/hctsa/hctsa-dsct` and `data-tr/hctsa/hctsa-cnt` for discrete-time and continuous-time series data, respectively for the pre-processing.
+
+#### Step 3: pre-processing for feature difference matrix
 **Create csv files** (optional): if you want csv files of the results run the script [create_csv.m](src/main/analysis-hctsa/pre-processing/create_csv.m).
 
 **Create matrix of differences**: 
