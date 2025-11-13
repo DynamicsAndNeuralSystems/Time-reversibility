@@ -10,12 +10,13 @@
 
 direction={'frwd', 'bkwd'};
 
+dir_data = '../../../data-tr/main-analysis/hctsa'
 for i=1:length(direction)
     dir=direction{i};
     disp(['Direction is ', dir])
 
     % Load HCTSA.mat
-    hctsa=sprintf('./hctsa_%s/HCTSA.mat', dir);
+    hctsa=sprintf('HCTSA.mat', dir);
     load(hctsa);
     
     % Folder check

@@ -53,13 +53,13 @@ The notebook [2-1NN_classification.ipynb](src/main/python/2-1NN_classification.i
 
 The notebook [3-feature_selection.ipynb](src/main/python/3-feature_selection.ipynb) extracts the set of top-performing features, characterized by an accuracy greater than a given threshold. We chose 72% to encompass a sufficiently large set of features for analysis. Distributions of $|\Delta f_i|$ can be reproduced using the notebook [4-boxes.ipynb](src/main/python/4-boxes.ipynb).
 <p align="center">
-  <img src="src/figures-paper/Distribution.png" width="600">
+  <img src="src/figures-paper/Distribution.png" width="800">
 </p>
 
 #### Statistical signatures of irreversibility are process-dependent
 The notebook [5-min_max.ipynb](src/main/python/5-min_max.ipynb) analyses the strength and weaknesses of diverse top-performing features in detecting the reversibility of specific simulated processes computing the accuracy of classification per process (referred to as "left-out accuracy"). The notebook can be used to reproduce figures (a) and (d) below while distributions of $|\Delta f|$ in (b) and (c) can be reproduced using the notebook [4-boxes.ipynb](src/main/python/4-boxes.ipynb).
 <p align="center">
-  <img src="src/figures-paper/Min-Max.png" width="600">
+  <img src="src/figures-paper/Min-Max.png" width="800">
 </p>
 
 #### Additional visualizations
@@ -88,9 +88,9 @@ To run the analysis you need to have [_hctsa_](https://github.com/benfulcher/hct
 Run the _hctsa_ analysis following the instructions in the comprehensive [documentation](https://time-series-features.gitbook.io/hctsa-manual/).
 
 #### Step 3
-**Create csv files**
+**Create csv files** (optional): if you want csv files of the results run the script [create_csv.m](src/main/analysis-hctsa/pre-processing/create_csv.m).
 
-**Create matrix of differences**
+**Create matrix of differences**: 
 
 ### Notes on package management
 
