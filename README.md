@@ -87,15 +87,21 @@ The coloured noise processes are currently written in Matlab and are stored in t
 
 ### _hctsa_ analysis
 To run the analysis you need to have [_hctsa_](https://github.com/benfulcher/hctsa) installed.
-#### Step 1
-**Set-up time series**: input files `INP_ts_[dsct/cnt]_[frwd/bkwd].txt` with the path of time series for the _hctsa_ run can be created using [INP_file_generation_dsct.py](src/main/analysis-_hctsa_/run/INP_file_generation_dsct.py) and [INP_file_generation_cnt.py](src/main/analysis-hctsa/run/INP_file_generation_cnt.py) files.
+
+#### Step 1: prepare input files in the [run](src/main/analysis-hctsa/run/) folder 
+**Set-up time series**: to create input files `INP_ts_[dsct/cnt]_[frwd/bkwd].txt` with the path of time series for the _hctsa_ run, run the following:
+
+    uv run src/main/analysis-hctsa/run/INP_file_generation_dsct.py
+    uv run src/main/analysis-hctsa/run/INP_file_generation_cnt.py
 
 **Set-up features**: input files with operations [INP_ops.txt](src/main/analysis-hctsa/run/INP_ops.txt) and [INP_mops.txt](src/main/analysis-hctsa/run/INP_mops.txt) for the _hctsa_ run.
 
-#### Step 2
+#### Step 2: run the _hctsa_ analysis
 Run the _hctsa_ analysis following the instructions in the comprehensive [documentation](https://time-series-features.gitbook.io/hctsa-manual/).
 
-#### Step 3
+Save the outcomes `HCTSA_frwd.mat` and `HCTSA_bkwd.mat` matrices in a folder `data-tr/hctsa/hctsa-dsct` and `data-tr/hctsa/hctsa-cnt` for discrete-time and continuous-time series data, respectively for the pre-processing.
+
+#### Step 3: pre-processing for feature difference matrix
 **Create csv files** (optional): if you want csv files of the results run the script [create_csv.m](src/main/analysis-hctsa/pre-processing/create_csv.m).
 
 **Create matrix of differences**: 
