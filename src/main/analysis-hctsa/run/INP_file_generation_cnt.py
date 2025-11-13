@@ -29,7 +29,7 @@ model_keywords={ 'BRW_cont': ['reversible'], 'OU': ['reversible'], 'Oscillator':
                  'LORENZ_STOCH_SUM': ['irreversible'],
                  'VDP_STOCH': ['irreversible']
         }
-models=['OU']
+
 lenght_ts=5000
 
 # Extract path of data, sort data by index, separate forward from backward time series and associate keywords each time series

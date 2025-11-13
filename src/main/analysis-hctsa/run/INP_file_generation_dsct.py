@@ -35,7 +35,6 @@ model_keywords={'GNO': ['reversible'], 'UNO': ['reversible'], 'PINK': ['reversib
                 'MODA': ['irreversible'], 'LLOG': ['irreversible'],
                 'SINE_STOCH': ['irreversible']}
 
-models=['GNO', 'UNO', 'AR1_UNO']
 
 lenght_ts=5000
 
