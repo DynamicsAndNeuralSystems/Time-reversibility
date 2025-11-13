@@ -104,7 +104,12 @@ Save the outcomes `HCTSA_frwd.mat` and `HCTSA_bkwd.mat` matrices in a folder `da
 #### Step 3: pre-processing for feature difference matrix
 **Create csv files** (optional): if you want csv files of the results run the script [create_csv.m](src/main/analysis-hctsa/pre-processing/create_csv.m).
 
-**Create matrix of differences**: 
+**Create matrix of differences**: use the notebook [pre_processing.m](src//main/analysis-hctsa/pre-processing/preprocessing_hctsa.m) to extract the matrix of feature differences from the forward and backward _hctsa_ matrices.
+Run it twice fixing the parameter:
+
+- `first_run=1`: creates the total matrix of forward and backward results and filters out bad-performing features;
+
+- `first_run=0`: creates the matrix of feature differences, $\Delta f_i= f_i-\tilde f_i$;
 
 ### Notes on package management
 
