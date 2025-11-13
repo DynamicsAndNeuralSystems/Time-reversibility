@@ -79,7 +79,7 @@ class ContinuousTimeSeriesGenerator: # parent class
         self.reverse_samples = [reversed(x) for x in self.samples]
 
 
-    def save(self, save_to='Data_5000_ACFDS/'):
+    def save(self, save_to='Data_XXXX_ACFDS/'): # specify length
         """
         Saves sample of time series as csv
         Returns list of filepaths
@@ -212,7 +212,7 @@ class ThreeDimContinuousTimeSeriesGenerator: # parent class
         
         
 
-    def save(self, save_to='Data_5000_ACFDS/'):
+    def save(self, save_to='Data_XXXX_ACFDS/'): # specify length
         """
         Saves sample of time series in three csv files, one for x, y, z
         Returns list of filepaths

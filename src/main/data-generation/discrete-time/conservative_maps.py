@@ -55,7 +55,7 @@ class ArnoldCat(TimeSeriesGenerator):
     
     def discard_transient_forward(self):
         N = self.length
-        N_star = int(5e3) #int(10/100 * N)
+        N_star = int(5e3)  
         for i in range(self.n):
             self.samples[i] = self.samples[i][N_star:]  # discard initial 10% of the time series
 
@@ -107,7 +107,7 @@ class ChirikovMap(TimeSeriesGenerator):
     
     def discard_transient_forward(self):
         N = self.length
-        N_star= int(5e3) #int(10/100 * N)
+        N_star= int(5e3)  
         for i in range(self.n):
             self.samples[i] = self.samples[i][N_star:]
 

@@ -53,9 +53,9 @@ data_moda=status
 ## other stochastic
 data_sine =status
 
-length=int(7000) #length of time series
+length=int(1e4) # length of time series (actual length + transient)
 n=100 #number of repetitions
-save_to = f"Data_{length-5000}_dsct/"
+save_to = f"Data_{length-5000}_dsct/"  # folder to save data (specify actual length without transient)
 
 if data_gno==True:
     gno=GNO(n=n, length=length)

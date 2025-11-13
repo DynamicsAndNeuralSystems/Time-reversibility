@@ -53,7 +53,7 @@ class TimeSeriesGenerator: # parent class
         self.samples = self.discard_transient_forward()
         self.reverse_samples = [reversed(x) for x in self.samples]
 
-    def save(self, save_to='Data_2000_dsct/'):
+    def save(self, save_to='XXXX/'): # name of the folder to save the data
         """
         Saves sample of time series as csv
         Returns list of filepaths
@@ -137,7 +137,7 @@ class WeierstrassTimeSeriesGenerator: # parent class
         self.samples = self.discard_transient_forward()
         self.reverse_samples = [reversed(x) for x in self.samples]
 
-    def save(self, save_to='Data_2000_dsct/'):
+    def save(self, save_to='XXXX/'): # name of the folder to save the data
         """
         Saves sample of time series as csv
         Returns list of filepaths
