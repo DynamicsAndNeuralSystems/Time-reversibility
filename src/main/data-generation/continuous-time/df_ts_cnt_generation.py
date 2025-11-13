@@ -10,7 +10,7 @@ import glob
 length=5000 # length of time series
 # Current folder
 cwd = os.getcwd()
-ts_dir=cwd+'/Data_5000_ACFDS/'
+ts_dir=cwd+f'/Data_{length}_ACFDS/'
 
 # Number of time series
 num_ts=100

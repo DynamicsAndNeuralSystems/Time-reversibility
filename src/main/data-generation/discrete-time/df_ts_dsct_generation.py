@@ -7,10 +7,10 @@ import tqdm
 import glob
 
 # Length of time series
-length=2000 # length of time series
+length=5000 # specify length of time series
 # Current folder
 cwd = os.getcwd()
-ts_dir=cwd+'/Data_2000_dsct/'
+ts_dir=cwd+f'/Data_{length}_dsct/'
 
 # Number of time series
 num_ts=100
