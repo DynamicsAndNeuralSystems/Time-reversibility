@@ -47,7 +47,7 @@ filepaths=[]
 filepaths_frwd=[]
 filepaths_bkwd=[]
 for model_name in models:
-    model_dir = os.path.join(cwd, 'data_tr/time-series/data-dsct', model_name)
+    model_dir = os.path.join(cwd, 'data-tr/time-series/data-dsct', model_name)
     files = os.listdir(model_dir)   #list all files and directories in a directory
     files = sorted(files, key=lambda f: extract_index(f))   #sort by index
     files_frwd = [file for file in files if 'reverse' not in os.path.basename(file)]    #forward time series
@@ -70,19 +70,17 @@ for model_name in models:
 
 # Write an input file with both forward and reversed time series INP_ts.txt
 cwd=os.getcwd()
-input_dir=cwd+'/INP_ts_files'
+input_dir=cwd+'/src/main/analysis-hctsa/run/INP_ts_files'
 if not os.path.exists(input_dir):
     os.mkdir(input_dir)
-with open(os.path.join('INP_ts_files',f"INP_ts_{lenght_ts}_dsct.txt"), 'w') as f:
-    for l in filepaths:
-        f.write(l + "\n")
+
 
 # Write an input file with forward time series INP_ts_frwd.txt
-with open(os.path.join('INP_ts_files',f"INP_ts_{lenght_ts}_dsct_frwd.txt"), 'w') as f:
+with open(os.path.join(input_dir,f"INP_ts_dsct_frwd.txt"), 'w') as f:
     for l in filepaths_frwd:
         f.write(l + "\n")
 
 # Write an input file with reversed time series INP_ts_bkwd.txt
-with open(os.path.join('INP_ts_files',f"INP_ts_{lenght_ts}_dsct_bkwd.txt"), 'w') as f:
+with open(os.path.join(input_dir,f"INP_ts_dsct_bkwd.txt"), 'w') as f:
     for l in filepaths_bkwd:
         f.write(l + "\n")

@@ -65,19 +65,17 @@ for model_name in models:
 
 # Write an input file with both forward and reversed time series INP_ts.txt
 cwd=os.getcwd()
-input_dir=cwd+'/INP_ts_files_ACFDS'
+input_dir=cwd+'/src/main/analysis-hctsa/run/INP_ts_files'
 if not os.path.exists(input_dir):
     os.mkdir(input_dir)
-with open(os.path.join(input_dir,f"INP_ts_{lenght_ts}_ACFDS.txt"), 'w') as f:
-    for l in filepaths:
-        f.write(l + "\n")
+
 
 # Write an input file with forward time series INP_ts_frwd.txt
-with open(os.path.join(input_dir,f"INP_ts_{lenght_ts}_ACFDS_frwd.txt"), 'w') as f:
+with open(os.path.join(input_dir,f"INP_ts_cnt_frwd.txt"), 'w') as f:
     for l in filepaths_frwd:
         f.write(l + "\n")
 
 # Write an input file with reversed time series INP_ts_bkwd.txt
-with open(os.path.join(input_dir,f"INP_ts_{lenght_ts}_ACFDS_bkwd.txt"), 'w') as f:
+with open(os.path.join(input_dir,f"INP_ts_cnt_bkwd.txt"), 'w') as f:
     for l in filepaths_bkwd:
         f.write(l + "\n")
