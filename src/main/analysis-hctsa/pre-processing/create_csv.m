@@ -7,42 +7,54 @@
 % Summary: Export csv of raw HCTSA matrix and related content.
 
 % -------------------------------------------------------------------------
+clear all
+
 
 direction={'frwd', 'bkwd'};
+data_types={'dsct', 'cnt'}; % discrete time and continuous time
 
-dir_data = '../../../data-tr/main-analysis/hctsa'
-for i=1:length(direction)
-    dir=direction{i};
-    disp(['Direction is ', dir])
-
-    % Load HCTSA.mat
-    hctsa=sprintf('HCTSA.mat', dir);
-    load(hctsa);
+for k=1:length(data_types)
+    data_type=data_types{k};
     
-    % Folder check
-    folderName = sprintf('./hctsa_%s/csv_files/', dir); 
+    for i=1:length(direction)
+        dir=direction{i};
+        disp(['Direction: ', dir, ' Type: ', data_type]);
+        % Load HCTSA.mat
+        base_path = fullfile('../../../../data-tr/main-analysis/hctsa');
+        folder_name = sprintf('hctsa-%s', data_type);
+        file_name = sprintf('HCTSA_%s.mat', dir);
+        hctsa_path = fullfile(base_path, folder_name, file_name);
 
-    % Check if the folder exists
-    if ~exist(folderName, 'dir')
-        % Create the folder if it does not exist
-        mkdir(folderName);
-        disp(['Folder "', folderName, '" created successfully.']);
-    else
-        disp(['Folder "', folderName, '" already exists.']);
+        load(hctsa_path);
+        
+        % Folder check
+        base_path = fullfile('../../../../data-tr/main-analysis/hctsa');
+        folder_name1 = sprintf('hctsa-%s', data_type);
+        folder_name2 = sprintf('csv_files_%s', dir); 
+        csv_path = fullfile(base_path, folder_name1, folder_name2);
+    
+        % Check if the folder exists
+        if ~exist(csv_path, 'dir')
+            % Create the folder if it does not exist
+            mkdir(csv_path);
+            disp(['Folder "', csv_path, '" created successfully.']);
+        else
+            disp(['Folder "', csv_path, '" already exists.']);
+        end
+        
+        % Write csv files
+        disp('Printing HCTSA content in csv file')
+        writetable(MasterOperations, [csv_path '/mops.csv'])
+        writetable(Operations, [csv_path '/ops.csv'])
+        writetable(TimeSeries, [csv_path '/TimeSeries.csv'])
+        writematrix(TS_CalcTime, [csv_path '/TS_CalcTime.csv'])
+        writematrix(TS_DataMat, [csv_path '/TS_DataMat.csv'])
+        writematrix(TS_Quality, [csv_path '/TS_Quality.csv'])
+    
+        disp('Ended printing')
+        disp('Now clearing past variables')
+    
     end
-    
-    % Write csv files
-    disp('Printing HCTSA content in csv file')
-    writetable(MasterOperations, [folderName 'mops.csv'])
-    writetable(Operations, [folderName 'ops.csv'])
-    writetable(TimeSeries, [folderName 'TimeSeries.csv'])
-    writematrix(TS_CalcTime, [folderName 'TS_CalcTime.csv'])
-    writematrix(TS_DataMat, [folderName 'TS_DataMat.csv'])
-    writematrix(TS_Quality, [folderName 'TS_Quality.csv'])
-
-    disp('Ended printing')
-    disp('Now clearing past variables')
-    clearvars -except direction;
-
+       
 end
-clear direction
+
