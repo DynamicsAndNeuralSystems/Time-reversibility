@@ -99,7 +99,7 @@ To run the analysis you need to have [_hctsa_](https://github.com/benfulcher/hct
 #### Step 2: run the _hctsa_ analysis
 Run the _hctsa_ analysis following the instructions in the comprehensive [documentation](https://time-series-features.gitbook.io/hctsa-manual/).
 
-Save the outcomes `HCTSA_frwd.mat` and `HCTSA_bkwd.mat` matrices in a folder `data-tr/hctsa/hctsa-dsct` and `data-tr/hctsa/hctsa-cnt` for discrete-time and continuous-time series data, respectively for the pre-processing.
+Save the outcomes `HCTSA_frwd.mat` and `HCTSA_bkwd.mat` matrices in a folder `data-tr/main-analysis/hctsa/hctsa-dsct` and `data-tr/main-analysis/hctsa/hctsa-cnt` for discrete-time and continuous-time series data, respectively for the pre-processing.
 
 #### Step 3: pre-processing for feature difference matrix
 **Create csv files** (optional): if you want csv files of the results run the script [create_csv.m](src/main/analysis-hctsa/pre-processing/create_csv.m).
