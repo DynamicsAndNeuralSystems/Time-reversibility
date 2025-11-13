@@ -17,13 +17,13 @@ from stochastic_vanderpol import *
 import os
 
 status = False
-data_vdp = True
+data_vdp = False
 data_oscillator = status
 data_lorenz = status
 data_rossler = status
 data_stochLorenz = status 
 data_stochasticVDP = status 
-data_ou = status 
+data_ou = True
 data_brw_cont = status
 data_MackeyGlass17 = status 
 
@@ -38,8 +38,13 @@ dir_data = os.path.join(cwd, 'data-tr/')
 if not os.path.exists(dir_data):
     os.mkdir(dir_data)
 
+# create main-analysis folder
+dir_main_analysis = os.path.join(dir_data, 'main-analysis')
+if not os.path.exists(dir_main_analysis):
+    os.mkdir(dir_main_analysis)
+
 # create time-series data folder
-dir_time_series = os.path.join(dir_data, 'time-series')
+dir_time_series = os.path.join(dir_main_analysis, 'time-series')
 if not os.path.exists(dir_time_series):
     os.mkdir(dir_time_series)
 

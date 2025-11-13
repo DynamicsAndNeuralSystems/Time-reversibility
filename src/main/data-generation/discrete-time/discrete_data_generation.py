@@ -22,11 +22,11 @@ status = False
 # coloured noise simulated in MATLAB (pink, brown, violet)
 ## iid noise
 data_gno=True
-data_uno=status
+data_uno=True
 
 ## autoregressive
 data_ar1_gno=status
-data_ar1_uno=status
+data_ar1_uno=True
 data_star_gno=status
 data_arma11_uno=status
 data_nar2=status
@@ -65,9 +65,13 @@ dir_data = os.path.join(cwd, 'data-tr/')
 # check if folder exists
 if not os.path.exists(dir_data):
     os.mkdir(dir_data)
+# create main-analysis folder
+dir_main_analysis = os.path.join(dir_data, 'main-analysis')
+if not os.path.exists(dir_main_analysis):
+    os.mkdir(dir_main_analysis)
 
 # create time-series data folder
-dir_time_series = os.path.join(dir_data, 'time-series')
+dir_time_series = os.path.join(dir_main_analysis, 'time-series')
 if not os.path.exists(dir_time_series):
     os.mkdir(dir_time_series)
 

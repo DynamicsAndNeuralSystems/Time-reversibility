@@ -9,7 +9,9 @@
 % -------------------------------------------------------------------------
 %% INITIALIZE HCTSA
 % -------------------------------------------------------------------------
-run('/Users/tdal0054/hctsa/startup.m');
+
+path_to_hctsa = XXX % path to hctsa folder
+run(path_to_hctsa);
 
 % -------------------------------------------------------------------------
 %% CREATE THE COMBINED HCTSA RAW MATRIX (frwd, bkwd) 
@@ -86,14 +88,14 @@ elseif first_run == 0
         % matrices and save TS_DataMat
         if k==1
             idx0_frwd = 1;
-            idxend_frwd= 2600;
-            idx0_bkwd = 2601;
+            idxend_frwd= 2600; % change according to number of frwd time series
+            idx0_bkwd = 2601; % change according to number of bkwd time series
             idxend_bkwd = 5200;
         
         elseif k == 2
             idx0_frwd = 1;
-            idxend_frwd= 900;
-            idx0_bkwd = 901;
+            idxend_frwd= 900; % change according to number of frwd time series
+            idx0_bkwd = 901; % change according to number of bkwd time series
             idxend_bkwd = 1800;
         
 
