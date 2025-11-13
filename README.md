@@ -85,9 +85,12 @@ To run the analysis you need to have [_hctsa_](https://github.com/benfulcher/hct
 **Set-up features**: input files with operations [INP_ops.txt](src/main/analysis-hctsa/run/INP_ops.txt) and [INP_mops.txt](src/main/analysis-hctsa/run/INP_mops.txt) for the _hctsa_ run.
 
 #### Step 2
-Run the __hctsa__ analysis.
+Run the _hctsa_ analysis following the instructions in the comprehensive [documentation](https://time-series-features.gitbook.io/hctsa-manual/).
 
 #### Step 3
+**Create csv files**
+
+**Create matrix of differences**
 
 ### Notes on package management
 
