@@ -6,7 +6,18 @@
 import numpy as np
 import os
 import pandas as pd
+from pathlib import Path
 
+
+# folder where this script lives
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+path_base = str(BASE_DIR)
+
+REPO_DIR = Path(BASE_DIR).parents[2]
+
+DATA_DIR = REPO_DIR / 'data-tr' / 'main-analysis' / 'hctsa' / 'hctsa-dsct'
+print(DATA_DIR)
+path_data= str(DATA_DIR)
 
 # Write processes in same order as in the INP_generation files 
 # Discrete time models
@@ -29,11 +40,9 @@ models_cnt = ['BRW_cont','OU', 'Oscillator',
 
 models = models_dsct + models_cnt
 
-# Generate a single HCTSA dictionary with all processes
-cwd = os.getcwd()
 
 # Directories of the hctsa diff dataframe created for the single classes of processes
-dir_data = cwd+'/data-analysis/'
+dir_data = path_base + '/data-analysis/'
 
 
 # Read dsct and cnt diff datasets
