@@ -114,6 +114,19 @@ Run it twice from the `pre-processing` folder fixing the parameter:
 #### Step 4: creation of dataset for analysis
 ### Notes on package management
 
+To create datasets from the _hctsa_ matrix of feature differences run 
+
+    uv run src/main/python/0-dataframe_generation_dsct.py
+    uv run src/main/python/0-dataframe_generation_cnt.py
+
+and then, to combine them in a single dataset and extract the common features between discrete-time and continuous-time processes run:
+
+    uv run src/main/python/0-full_dataframe_generation.py
+
+This generates a Python dataframe that can be subsequently analyzed following the same procedure described above in the **1. Using supplied pre-processed data to reproduce results** section.
+
+### Notes on package management
+
 uv will create a virtual environment `.venv` for you in the root directory of the project after you first run `uv sync`. Make sure to use this virtual environment when running the Jupyter notebooks in this repositroy!
 
 ## Contact

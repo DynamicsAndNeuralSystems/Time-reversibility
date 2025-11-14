@@ -5,16 +5,18 @@ import pandas as pd
 import os
 from pathlib import Path
 
-
 # folder where this script lives
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-path_base = str(BASE_DIR)
 
 REPO_DIR = Path(BASE_DIR).parents[2]
 
 DATA_DIR = REPO_DIR / 'data-tr' / 'main-analysis' / 'hctsa' / 'hctsa-dsct'
 print(DATA_DIR)
 path_data= str(DATA_DIR)
+
+SAVE_DIR = REPO_DIR / 'data-tr' / 'main-analysis' / 'data-analysis'
+print(SAVE_DIR)
+path_save= str(SAVE_DIR)
 
 # Write down models (same order as the one in INP_file_generation.py)
 models=['GNO', 'UNO', 'PINK', 'BROWN', 'VIOLET', # noises (R)
@@ -50,9 +52,10 @@ df_hctsa.columns = op_Names
 df_hctsa['Model'] = models_repeated
 df_hctsa = df_hctsa.set_index('Model')
 
-# save the dataframe
-os.makedirs(path_base+'/data-analysis/', exist_ok=True)
-df_hctsa.to_csv(path_base+'/data-analysis/df_TS_DataMat_diff_dsct.csv')
+# save the dataframe (change path)
+os.makedirs(path_save, exist_ok=True)
+df_hctsa.to_csv(path_save+'/df_TS_DataMat_diff_dsct.csv')
+
 
 
 

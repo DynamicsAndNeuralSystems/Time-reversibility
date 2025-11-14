@@ -15,7 +15,7 @@ path_base = str(BASE_DIR)
 
 REPO_DIR = Path(BASE_DIR).parents[2]
 
-DATA_DIR = REPO_DIR / 'data-tr' / 'main-analysis' / 'hctsa' / 'hctsa-dsct'
+DATA_DIR = REPO_DIR / 'data-tr' / 'main-analysis' / 'data-analysis'
 print(DATA_DIR)
 path_data= str(DATA_DIR)
 
@@ -41,15 +41,13 @@ models_cnt = ['BRW_cont','OU', 'Oscillator',
 models = models_dsct + models_cnt
 
 
-# Directories of the hctsa diff dataframe created for the single classes of processes
-dir_data = path_base + '/data-analysis/'
 
 
 # Read dsct and cnt diff datasets
-df_hctsa_dsct=pd.read_csv(dir_data+'df_TS_DataMat_diff_dsct.csv')
+df_hctsa_dsct=pd.read_csv(path_data+'/df_TS_DataMat_diff_dsct.csv')
 df_hctsa_dsct.set_index(['Model'], inplace=True)
 
-df_hctsa_cnt=pd.read_csv(dir_data+'df_TS_DataMat_diff_cnt.csv')
+df_hctsa_cnt=pd.read_csv(path_data+'/df_TS_DataMat_diff_cnt.csv')
 df_hctsa_cnt.set_index(['Model'], inplace=True)
 
 # Extract common operations between the two datasets
@@ -72,6 +70,6 @@ df_hctsa['Model'] = models_repeat
 df_hctsa = df_hctsa.set_index('Model')
 
 # Save common operations and hctsa
-df_hctsa.to_csv(dir_data+'df_TS_DataMat_diff.csv', index=True)
+df_hctsa.to_csv(path_data+'/df_TS_DataMat_diff.csv', index=True)
 df_common_ops = pd.DataFrame(common_ops, columns=['Name'])
-df_common_ops.to_csv(dir_data+'common_ops.csv', index=False)
+df_common_ops.to_csv(path_data+'/common_ops.csv', index=False)
