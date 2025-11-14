@@ -102,10 +102,10 @@ Run the _hctsa_ analysis following the instructions in the comprehensive [docume
 Save the outcomes `HCTSA_frwd.mat` and `HCTSA_bkwd.mat` matrices in a folder `data-tr/main-analysis/hctsa/hctsa-dsct` and `data-tr/main-analysis/hctsa/hctsa-cnt` for discrete-time and continuous-time series data, respectively for the pre-processing.
 
 #### Step 3: pre-processing for feature difference matrix
-**Create csv files** (optional): if you want csv files of the results run the script [create_csv.m](src/main/analysis-hctsa/pre-processing/create_csv.m).
+**Create csv files** (optional): if you want csv files of the results run the script [create_csv.m](src/main/analysis-hctsa/pre-processing/create_csv.m) from the `pre-processing` folder.
 
 **Create matrix of differences**: use the notebook [pre_processing.m](src//main/analysis-hctsa/pre-processing/preprocessing_hctsa.m) to extract the matrix of feature differences from the forward and backward _hctsa_ matrices.
-Run it twice fixing the parameter:
+Run it twice from the `pre-processing` folder fixing the parameter:
 
 - `first_run=1`: creates the total matrix of forward and backward results and filters out bad-performing features;
 
