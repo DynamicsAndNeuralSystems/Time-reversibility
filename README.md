@@ -111,6 +111,7 @@ Run it twice from the `pre-processing` folder fixing the parameter:
 
 - `first_run=0`: creates the matrix of feature differences, $\Delta f_i= f_i-\tilde f_i$;
 
+#### Step 4: creation of dataset for analysis
 ### Notes on package management
 
 uv will create a virtual environment `.venv` for you in the root directory of the project after you first run `uv sync`. Make sure to use this virtual environment when running the Jupyter notebooks in this repositroy!
