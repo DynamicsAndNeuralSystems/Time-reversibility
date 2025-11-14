@@ -52,7 +52,6 @@ for k=1:length(data_types)
         writematrix(TS_Quality, [csv_path '/TS_Quality.csv'])
     
         disp('Ended printing')
-        disp('Now clearing past variables')
     
     end
        

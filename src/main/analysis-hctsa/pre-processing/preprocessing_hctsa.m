@@ -10,8 +10,9 @@
 %% INITIALIZE HCTSA
 % -------------------------------------------------------------------------
 
-path_to_hctsa = XXX % path to hctsa folder
-run(path_to_hctsa);
+%path_to_hctsa = XXX % path to hctsa folder
+%run(path_to_hctsa);
+run('/Users/tdal0054/hctsa/startup.m');
 
 % -------------------------------------------------------------------------
 %% CREATE THE COMBINED HCTSA RAW MATRIX (frwd, bkwd) 
