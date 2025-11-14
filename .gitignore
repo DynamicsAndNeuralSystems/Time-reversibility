@@ -2,6 +2,9 @@
 Data_*_dsct/
 Data_*_ACFDS/
 data-tr/
+data-analysis/
+data-zero/
+supplementary-material/
 
 # Mac
 .DS_Store
