@@ -1,6 +1,7 @@
 # Data folders
 Data_*_dsct/
 Data_*_ACFDS/
+data-tr/
 
 # Mac
 .DS_Store
