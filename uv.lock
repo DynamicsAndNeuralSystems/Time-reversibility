@@ -766,13 +766,13 @@ dependencies = [
 requires-dist = [
     { name = "numpy", specifier = ">=2.3.3,<3.0.0" },
     { name = "pandas", specifier = ">=2.3.3,<3.0.0" },
-    { name = "plotly", specifier = ">=6.0.1" },
+    { name = "plotly", specifier = ">=6.4.0" },
     { name = "scipy", specifier = ">=1.16.2,<2.0.0" },
     { name = "sdeint", specifier = ">=0.3.0,<0.4.0" },
     { name = "seaborn", specifier = ">=0.13.2" },
     { name = "statsmodels", specifier = ">=0.14.5,<0.15.0" },
     { name = "tqdm", specifier = ">=4.67.1,<5.0.0" },
-    { name = "xlsxwriter", specifier = ">=3.2.3" },
+    { name = "xlsxwriter", specifier = ">=3.2.9" },
 ]
 
 [[package]]
