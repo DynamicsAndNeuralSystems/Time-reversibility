@@ -112,7 +112,6 @@ Run it twice from the `pre-processing` folder fixing the parameter:
 - `first_run=0`: creates the matrix of feature differences, $\Delta f_i= f_i-\tilde f_i$;
 
 #### Step 4: creation of dataset for analysis
-### Notes on package management
 
 To create datasets from the _hctsa_ matrix of feature differences run 
 
