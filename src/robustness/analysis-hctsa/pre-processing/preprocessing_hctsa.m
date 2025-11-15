@@ -17,31 +17,45 @@ run('/Users/tdal0054/hctsa/startup.m');
 
 leng={'10', '20', '50', '100', '200', '500', '1000', '2000'};
 
-first_run = 0
+first_run = 1
 
 if first_run == 1
+base_path = fullfile('../../../../data-tr/robustness-analysis/hctsa/');
+
+folder_frwd = 'hctsa-frwd'; 
+folder_bkwd = 'hctsa-bkwd';
+folder_tot = fullfile(base_path, 'hctsa-tot'); 
+% Check if the folder exists
+if ~exist(folder_tot, 'dir')
+    % Create the folder if it does not exist
+    mkdir(folder_tot);
+    disp(['Folder "', folder_tot, '" created successfully.']);
+else
+    disp(['Folder "', folder_tot, '" already exists.']);
+end
 
     for i=1:length(leng)
         l = leng{i};
-        folderName = sprintf('./hctsa_tot_%s',l); % Specify the folder name
+        folder_len = fullfile(folder_tot, sprintf('%s', l));
 
-        % Check if the folder exists
-        if ~exist(folderName, 'dir')
-           % Create the folder if it does not exist
-          mkdir(folderName);
-         disp(['Folder "', folderName, '" created successfully.']);
+        if ~exist(folder_len, 'dir')
+            % Create the folder if it does not exist
+            mkdir(folder_len);
+            disp(['Folder "', folder_len, '" created successfully.']);
         else
-            disp(['Folder "', folderName, '" already exists.']);
+            disp(['Folder "', folder_len, '" already exists.']);
         end
-
-        % Combine matrices
-        file_frwd = sprintf('./frwd/HCTSA_%s.mat', l);
-        file_bkwd = sprintf('./bkwd/HCTSA_%s.mat', l);
-        file_tot = sprintf('./hctsa_tot_%s/HCTSA.mat', l);
-        TS_Combine(file_frwd, file_bkwd, false, false, file_tot);
-   
         
-        hctsa = sprintf('./hctsa_tot_%s/HCTSA.mat', l);
+        % Combine matrices
+        path_frwd = fullfile(base_path, folder_frwd, sprintf('HCTSA_%s.mat', l));
+        path_bkwd = fullfile(base_path, folder_bkwd, sprintf('HCTSA_%s.mat', l));
+        file_tot = fullfile(folder_len, sprintf('HCTSA_%s.mat', l));
+
+        
+        
+        TS_Combine(path_frwd, path_bkwd, false, false, file_tot);
+        
+        hctsa = file_tot;
         load(hctsa);
 
         % Generate filtered HCTSA matrix

@@ -17,13 +17,13 @@ for i=1:length(direction)
     for j=1:length(leng)
         % Load HCTSA.mat
         l=leng{j};
-        base_path = fullfile(sprintf('../../../../data-tr/robustness-analysis/hctsa/%s', dire));
+        base_path = fullfile(sprintf('../../../../data-tr/robustness-analysis/hctsa/hctsa-%s', dire));
         hctsa=sprintf('HCTSA_%s.mat', l);
         hctsa_path = fullfile(base_path, hctsa);
         load(hctsa_path);
         
         % Folder check
-        folderName = sprintf('../../../../data-tr/robustness-analysis/hctsa/%s/csv_files_%s/', dire, l); 
+        folderName = sprintf('../../../../data-tr/robustness-analysis/hctsa/hctsa-%s/csv_files_%s/', dire, l); 
         csv_path = fullfile(base_path, folderName);
 
         % Check if the folder exists

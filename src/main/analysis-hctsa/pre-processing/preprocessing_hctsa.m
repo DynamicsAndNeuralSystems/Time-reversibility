@@ -37,8 +37,8 @@ if first_run == 1
             disp(['Folder "', folderName, '" already exists.']);
         end
         
-        path_frwd = fullfile(base_path, folder, './HCTSA_frwd.mat');
-        path_bkwd = fullfile(base_path, folder, './HCTSA_bkwd.mat');
+        path_frwd = fullfile(base_path, folder, '/HCTSA_frwd.mat');
+        path_bkwd = fullfile(base_path, folder, '/HCTSA_bkwd.mat');
         fileName = fullfile(folderName, '/HCTSA.mat');
 
         % Combine matrices
