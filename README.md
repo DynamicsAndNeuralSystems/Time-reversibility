@@ -137,6 +137,16 @@ This generates a Python dataframe that can be subsequently analyzed following th
 
 Follow the instructions above and use the code provided in the [data_generation](src/main/data-generation/) folder to generate time series with different length, the script [INP_file_generatino_dsct.py](src/robustness/analysis-hctsa/run/INP_file_generation_dsct.py) to generate input files, analyze them through _hctsa_ and the scripts in [pre-processing](src/robustness/analysis-hctsa/pre-processing/) to pre-process the `HCTSA_frwd.mat` and `HCTSA_bkwde.mat` matrices. 
 
+To convert the pre-processed files from MATLAB into python dataframes run
+
+    uv run src/robustness/python/0-dataframe.py
+
+If one of the lengths is the one used for the main analysis, to select a subset of both processes and features to analyse run 
+
+    uv run src/robustness/python/0-selection_dataframe.py
+
+Run the analysis with the notebook [1-analysis_features.ipynb](src/robustness/python/1-analysis_features.ipynb).
+
 ### Notes on package management
 
 uv will create a virtual environment `.venv` for you in the root directory of the project after you first run `uv sync`. Make sure to use this virtual environment when running the Jupyter notebooks in this repositroy!

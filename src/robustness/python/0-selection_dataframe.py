@@ -4,6 +4,7 @@
 import numpy as np
 import pandas as pd
 import os
+from pathlib import Path
 
 
 cwd = os.getcwd()
@@ -46,9 +47,23 @@ ops = ['AC_nl_001_abs', 'AC_nl_01_abs',
        'SB_MotifTwo_diff_dd',
        'SB_MotifTwo_diff_u']
 
-dir_data = cwd + '/../../Data_HCTSA/dsct_ACFDS/analysis_removed_CO_TranslateShape/Data_analysis/'
+# folder where this script lives
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+path_base = str(BASE_DIR)
 
-df = pd.read_csv(dir_data + 'df_TS_DataMat_diff.csv')
+REPO_DIR = Path(BASE_DIR).parents[2]
+
+DATA_MAIN_DIR = REPO_DIR / 'data-tr' / 'main-analysis' / 'data-analysis'
+path_data= str(DATA_MAIN_DIR)
+
+SAVE_DIR = REPO_DIR / 'data-tr' / 'robustness-analysis' / 'data-analysis'
+path_save = str(SAVE_DIR)
+
+
+if not os.path.exists(path_save):
+    os.makedirs(path_save)
+    
+df = pd.read_csv(path_data + '/df_TS_DataMat_diff.csv')
 df.set_index('Model', inplace=True)
 
 # Extract rows models
@@ -60,4 +75,4 @@ df = df.loc[:, ops]
 print(df.shape)  # (900, 24)
 
 # Save
-df.to_csv(cwd + '/Data_analysis/df_TS_DataMat_diff_5000.csv')
+df.to_csv(path_save + '/df_TS_DataMat_diff_5000.csv')

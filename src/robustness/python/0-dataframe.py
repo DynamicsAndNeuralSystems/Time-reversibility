@@ -15,9 +15,11 @@ REPO_DIR = Path(BASE_DIR).parents[2]
 DATA_DIR = REPO_DIR / 'data-tr' / 'robustness-analysis' / 'hctsa'
 path_data= str(DATA_DIR)
 
-SAVE_DIR = REPO_DIR / 'data-tr' / 'robustness-analysis' / 'data-analysis-robustness'
+SAVE_DIR = REPO_DIR / 'data-tr' / 'robustness-analysis' / 'data-analysis'
 path_save = str(SAVE_DIR)
 
+if not os.path.exists(path_save):
+    os.makedirs(path_save)
 
 # Write down models (same order as the one in INP_file_generation.py)
 models = ['AR1_UNO', 'ARMA11_UNO', #ARMA
@@ -38,13 +40,13 @@ num_ts=100
 length = [10, 20, 50, 100, 200, 500, 1000, 2000]
 for i in length:
     length_ts = i
-    df_ops = pd.read_csv(path_data+f'/hctsa_tot/{length_ts}/csv_files/ops_filter.csv')
+    df_ops = pd.read_csv(path_data+f'/hctsa-tot/{length_ts}/csv_files/ops_filter.csv')
     op_Names = df_ops['Name'].tolist()
 
     #  Create the dataframe
     models_repeated = np.repeat(models, num_ts)
 
-    df_hctsa = pd.read_csv(path_data+f'/hctsa_diff/TS_DataMat_diff_{length_ts}.csv', header=None)
+    df_hctsa = pd.read_csv(path_data+f'/hctsa-diff/TS_DataMat_diff_{length_ts}.csv', header=None)
     df_hctsa.columns = op_Names
     df_hctsa['Model'] = models_repeated
     df_hctsa = df_hctsa.set_index('Model')
