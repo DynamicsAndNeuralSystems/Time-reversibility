@@ -17,7 +17,7 @@ run('/Users/tdal0054/hctsa/startup.m');
 
 leng={'10', '20', '50', '100', '200', '500', '1000', '2000'};
 
-first_run = 1
+first_run = 0;
 
 if first_run == 1
 base_path = fullfile('../../../../data-tr/robustness-analysis/hctsa/');
@@ -66,37 +66,40 @@ elseif first_run == 0
 
     for i=1:length(leng)
         l=leng{i};
-        % Load filtered matrix
-        hctsa = sprintf('./hctsa_tot_%s/HCTSA_N.mat', l);
+        base_path = fullfile('../../../../data-tr/robustness-analysis/hctsa/');
+
+        folder_tot = fullfile(base_path, 'hctsa-tot'); 
+        hctsa = fullfile(folder_tot, sprintf('%s/HCTSA_%s_N.mat', l, l));
         load(hctsa);
 
         % Export full data structures
-        folderName = sprintf('./hctsa_tot_%s/csv_files/', l); % Specify the folder name
+        csv_folder = fullfile(folder_tot, sprintf('%s/csv_files', l)); 
+    
     
         % Check if the folder exists
-        if ~exist(folderName, 'dir')
+        if ~exist(csv_folder, 'dir')
             % Create the folder if it does not exist
-            mkdir(folderName);
-            disp(['Folder "', folderName, '" created successfully.']);
+            mkdir(csv_folder);
+            disp(['Folder "', csv_folder, '" created successfully.']);
         else
-            disp(['Folder "', folderName, '" already exists.']);
+            disp(['Folder "', csv_folder, '" already exists.']);
         end
 
         disp('Saving files ...');
      
-        writetable(MasterOperations, [folderName, 'mops_filter.csv'])
-        writetable(Operations, [folderName, 'ops_filter.csv'])
-        writetable(TimeSeries, [folderName, 'TimeSeries_filter.csv'])
-        writematrix(TS_DataMat, [folderName, 'TS_DataMat_filter.csv'])
+        writetable(MasterOperations, fullfile(csv_folder, 'mops_filter.csv'))
+        writetable(Operations, fullfile(csv_folder, 'ops_filter.csv'))
+        writetable(TimeSeries, fullfile(csv_folder, 'TimeSeries_filter.csv'))
+        writematrix(TS_DataMat, fullfile(csv_folder, 'TS_DataMat_filter.csv'))
 
         disp('File saved! Now compute the difference HCTSA matrix');
 
         % Compute difference between forward and backward filtered HCTSA
         % matrices and save TS_DataMat
         idx0_frwd = 1;
-        idxend_frwd= 900;
+        idxend_frwd= 900; % change based on the number of time series considered
         idx0_bkwd = 901;
-        idxend_bkwd = 1800;
+        idxend_bkwd = 1800; % change based on the number of time series considered
     
         TS_DataMat_frwd=TS_DataMat(idx0_frwd:idxend_frwd,:);
         TS_DataMat_bkwd=TS_DataMat(idx0_bkwd:idxend_bkwd,:);
@@ -106,7 +109,7 @@ elseif first_run == 0
         % Export total difference matrix
 
         % Export full data structures
-        folderName = sprintf('./hctsa_diff_%s/', l); % Specify the folder name
+        folderName = fullfile(base_path, 'hctsa-diff/');
     
         % Check if the folder exists
         if ~exist(folderName, 'dir')
@@ -118,7 +121,7 @@ elseif first_run == 0
         end
 
         disp('Saving file ...');
-        writematrix(TS_DataMat_diff, [folderName, 'TS_DataMat_diff.csv']);
+        writematrix(TS_DataMat_diff, fullfile(folderName, sprintf('TS_DataMat_diff_%s.csv', l)));
     
         disp('All done ;)')
     end
