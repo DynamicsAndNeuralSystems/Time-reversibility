@@ -36,8 +36,6 @@ model_keywords={'GNO': ['reversible'], 'UNO': ['reversible'], 'PINK': ['reversib
                 'SINE_STOCH': ['irreversible']}
 
 
-lenght_ts=5000
-
 # Extract path of data, sort data by index, separate forward from backward time series and associate keywords each time series
 def extract_index(filename):
     match = re.search(r'(\d{3})', filename)
@@ -65,7 +63,6 @@ for model_name in models:
     files_bkwd = [os.path.join(model_dir, file) for file in files_bkwd]
     files_bkwd = [fp + '    ' + ','.join(model_keywords[model_name]) for fp in files_bkwd]
     filepaths_bkwd += files_bkwd
-
 
 
 
