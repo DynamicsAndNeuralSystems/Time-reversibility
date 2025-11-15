@@ -46,10 +46,13 @@ Matrices obtained from the _hctsa_ analysis of the time series above are contain
 - `HCTSA_bkwd.mat` file resulting from the _hctsa_ analysis of reversed time series;
 
 ### Analysis 
-Code for the analysis of the feature difference dataset `df_TS_DataMat_diff.csv` is in the [python](/src/main/python/) folder.
+Code for the analysis of the feature difference dataset `df_TS_DataMat_diff.csv` is in the [main/python](/src/main/python/) folder.
+
+The notebook [1-analysis_features.ipynb](src/robustness/python/1-analysis_features.ipynb) takes a subset of top-performing features and r
 
 #### Time-reversal invariant features
-The notebook [1-zero_features.ipynb](src/main/python/1-zero_features.ipynb) extracts features that are insensitive to time reversibility.
+Run the notebook [1-zero_features.ipynb](src/main/python/1-zero_features.ipynb) to reproduce the visualization of the robustness of a subset of top-performing features across processes.
+
 
 #### Statistics for reversibility
 The notebook [2-1NN_classification.ipynb](src/main/python/2-1NN_classification.ipynb) assigns the accuracy of classification between the reversible and irreversible groups to each feature $f_i$. We used the performance of a 1-nearest neighbor (1-NN) classifier in the space of each $f_i$, evaluated using a leave-one-process-out cross-validation strategy.
@@ -70,6 +73,11 @@ The notebook [6-inspect_good_features.ipynb](src/main/python/6-inspect_good_feat
 
 The notebook [7-plot_distributions.ipynb](src/main/python/7-plot_distributions.ipynb) contains an alternative plot of the distribution of $|\Delta f|$ per process.
 
+### Robustness analysis
+Code for the analysis of the feature difference obtained from time series with diverse length in [robustness/python](src//robustness/python/).
+<p align="center">
+  <img src="src/figures-paper/Robustness.png" width="800">
+</p>
 
 ## 2. From scratch
 ### Data generation
