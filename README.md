@@ -135,7 +135,7 @@ This generates a Python dataframe that can be subsequently analyzed following th
 
 ### Robustness analysis
 
-Follow the instructions above and use the code provided for the main analysis to generate time series with different length, analyze them through _hctsa_ and pre-process the `HCTSA_frwd.mat` and `HCTSA_bkwde.mat` matrices. 
+Follow the instructions above and use the code provided in the [data_generation](src/main/data-generation/) folder to generate time series with different length, the script [INP_file_generatino_dsct.py](src/robustness/analysis-hctsa/run/INP_file_generation_dsct.py) to generate input files, analyze them through _hctsa_ and the scripts in [pre-processing](src/robustness/analysis-hctsa/pre-processing/) to pre-process the `HCTSA_frwd.mat` and `HCTSA_bkwde.mat` matrices. 
 
 ### Notes on package management
 
