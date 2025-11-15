@@ -48,8 +48,6 @@ Matrices obtained from the _hctsa_ analysis of the time series above are contain
 ### Analysis 
 Code for the analysis of the feature difference dataset `df_TS_DataMat_diff.csv` is in the [main/python](/src/main/python/) folder.
 
-The notebook [1-analysis_features.ipynb](src/robustness/python/1-analysis_features.ipynb) takes a subset of top-performing features and r
-
 #### Time-reversal invariant features
 Run the notebook [1-zero_features.ipynb](src/main/python/1-zero_features.ipynb) to reproduce the visualization of the robustness of a subset of top-performing features across processes.
 
