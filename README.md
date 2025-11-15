@@ -76,7 +76,7 @@ The notebook [7-plot_distributions.ipynb](src/main/python/7-plot_distributions.i
 ### Robustness analysis
 Code for the analysis of the feature difference obtained from time series with diverse length in [robustness/python](src//robustness/python/).
 <p align="center">
-  <img src="src/figures-paper/Robustness.png" width="800">
+  <img src="src/figures-paper/Robustness.png" width="600">
 </p>
 
 ## 2. From scratch
@@ -91,7 +91,8 @@ To run the python code which generates most of the data files, run the following
     uv run src/main/data-generation/discrete-time/discrete_data_generation.py
     uv run src/main/data-generation/continuous-time/continuous_data_generation.py
 
-The coloured noise processes are currently written in Matlab and are stored in the `src/main/data-generation/noise_generation/` directory. To generate the data, run the `src/main/data-generation/noise_generation/noise_generator.m` script.
+The coloured noise processes were simulated using the [MATLAB package](https://au.mathworks.com/matlabcentral/fileexchange/42919-pink-red-blue-and-violet-noise-generation-with-matlab). The code we used is stored in the [noise_generation](src/main/data-generation/noise_generation/) directory. 
+To generate the data, run the [noise_generator.m](src/main/data-generation/noise_generation/noise_generator.m) script.
 
 ### _hctsa_ analysis
 To run the analysis you need to have [_hctsa_](https://github.com/benfulcher/hctsa) installed.
@@ -110,7 +111,7 @@ Run the _hctsa_ analysis following the instructions in the comprehensive [docume
 Save the outcomes `HCTSA_frwd.mat` and `HCTSA_bkwd.mat` matrices in a folder `data-tr/main-analysis/hctsa/hctsa-dsct` and `data-tr/main-analysis/hctsa/hctsa-cnt` for discrete-time and continuous-time series data, respectively for the pre-processing.
 
 #### Step 3: pre-processing for feature difference matrix
-**Create csv files** (optional): if you want csv files of the results run the script [create_csv.m](src/main/analysis-hctsa/pre-processing/create_csv.m) from the `pre-processing` folder.
+**Create csv files** (optional): if you want csv files of the results run the script [create_csv.m](src/main/analysis-hctsa/pre-processing/create_csv.m).
 
 **Create matrix of differences**: use the notebook [pre_processing.m](src//main/analysis-hctsa/pre-processing/preprocessing_hctsa.m) to extract the matrix of feature differences from the forward and backward _hctsa_ matrices.
 Run it twice from the `pre-processing` folder fixing the parameter:
@@ -131,6 +132,10 @@ and then, to combine them in a single dataset and extract the common features be
     uv run src/main/python/0-full_dataframe_generation.py
 
 This generates a Python dataframe that can be subsequently analyzed following the same procedure described above in the **1. Using supplied pre-processed data to reproduce results** section.
+
+### Robustness analysis
+
+Follow the instructions above and use the code provided for the main analysis to generate time series with different length, analyze them through _hctsa_ and pre-process the `HCTSA_frwd.mat` and `HCTSA_bkwde.mat` matrices. 
 
 ### Notes on package management
 
