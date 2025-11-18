@@ -79,8 +79,9 @@ The plot below can be reproduced by running the [1-analysis_features.ipynb](src/
 </p>
 
 ## 2. From scratch
-### Data generation
-If you want to run the code from scratch, generating your own time series and analysing them through _hctsa_ you should start by making the `data-tr` directory. 
+The following is if you want to simulate a bunch of processes using the code provided in the [src/main/data-generation](src/main/data-generation/) folder. Time series generated from scratch won't match those used to generate the results in the paper due to the inherent stochasticity of some of the processes. To reproduce results exactly, use the pre-generated filed as in part 1.
+### Data generation 
+If you want to run the code from scratch, generating your own time series (simulated processes can be controlled with flags, e.g. `status`) and analysing them through _hctsa_ you should start by making the `data-tr` directory. 
 
     cd Time-reversibility
     mkdir data-tr
@@ -90,8 +91,8 @@ To run the python code which generates most of the data files, run the following
     uv run src/main/data-generation/discrete-time/discrete_data_generation.py
     uv run src/main/data-generation/continuous-time/continuous_data_generation.py
 
-The coloured noise processes were simulated using the [MATLAB package](https://au.mathworks.com/matlabcentral/fileexchange/42919-pink-red-blue-and-violet-noise-generation-with-matlab). The code we used is stored in the [noise_generation](src/main/data-generation/noise_generation/) directory. 
-To generate the data, run the [noise_generator.m](src/main/data-generation/noise_generation/noise_generator.m) script.
+The coloured noise processes were simulated using the [MATLAB package](https://au.mathworks.com/matlabcentral/fileexchange/42919-pink-red-blue-and-violet-noise-generation-with-matlab). The code we used is stored in the [noise_generation](src/main/data-generation/noise-generation/) directory. 
+To generate the data, run the [noise_generator.m](src/main/data-generation/noise-generation/noise_generator.m) script.
 
 ### _hctsa_ analysis
 To run the analysis you need to have [_hctsa_](https://github.com/benfulcher/hctsa) installed.
