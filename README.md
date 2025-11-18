@@ -20,7 +20,7 @@ Alternatively, you can install uv via brew
 
     brew install uv
 
-To install this repository and its dependencis, run the following in a terminal:
+To install this repository and its dependencies, run the following in a terminal:
     
     git clone git@github.com:teresa-dn/Time-reversibility.git
     cd Time-reversibility
@@ -29,11 +29,11 @@ To install this repository and its dependencis, run the following in a terminal:
 # Usage
 ## 1. Using supplied pre-processed data to reproduce results
 ### Data availability
-Data used in "A data-driven approach to identifying statistical indicators of temporal asymmetry" is available at **zenodo**. To run the analysis, place the folder `data-tr` into the `Time-reversibility` repo.
+Data used in "A data-driven approach to identifying statistical indicators of temporal asymmetry" is available at **zenodo**. To run the analysis, drag the `data-tr.zip` file into the repo and unzip there, leaving the uncompressed `data-tr` folder in the repo. You should now have the foler `Time-reversibility/data-tr` in your path.
 
 #### Pre-processed data
 The folder `data-tr/main-analysis/data-analysis/` contains:
-- `df_TS_DataMat_diff.csv`: pre-processed dataset of feature differences, $\Delta f_i = f_i -\tilde{f_i}$, $i\in\{1,...,6082\}$ between a feature $f_i$ computed on forward time series and reversed, $\tilde f_i$;
+- `df_TS_DataMat_diff.csv`: pre-processed dataset of feature differences, $\Delta f_i = f_i -\tilde{f_i}$, $i\in\{1,...,6082\}$ where $f_i$ is the $i$-th feature computed from the forward time series and $\tilde f_i$ is the $$-th feature computed from the reversed time series;
 - `common_ops.csv`: set of features after pre-processing;
 
 #### Time series
@@ -46,7 +46,7 @@ Matrices obtained from the _hctsa_ analysis of the time series above are contain
 - `HCTSA_bkwd.mat` file resulting from the _hctsa_ analysis of reversed time series;
 
 ### Analysis 
-Code for the analysis of the feature difference dataset `df_TS_DataMat_diff.csv` is in the [main/python](/src/main/python/) folder.
+Code for the analysis of the feature difference dataset `df_TS_DataMat_diff.csv` is in the [src/main/python](/src/main/python/) folder of the repository.
 
 #### Time-reversal invariant features
 Run the notebook [1-zero_features.ipynb](src/main/python/1-zero_features.ipynb) to reproduce the visualization of the robustness of a subset of top-performing features across processes.
