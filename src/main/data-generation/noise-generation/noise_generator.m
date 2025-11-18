@@ -1,11 +1,12 @@
 clear, clc, close all
      
 % Parameters
-m = 1;        % number of the rows of the noise matrix 
-n = XXXX;     % number of the columns of the noise matrix (number of time series)
-idx0 = 5001;   % number of points I cut (transient dynamics)
+% Parameters
+m = 1;        % number of the rows of the noise matrix (number of time series) keep 1 for 1 time series per file
+n = 7000;     % number of the columns of the noise matrix (time series length - transient+dynamics to analyse)
+idx0 = 5001;   % number of points to cut (transient dynamics)
 
-path_folder = '../../Data_XXXX_dsct'; % XXXX len gth of time series
+path_folder = sprintf('../../../../data-tr/main-analysis/time-series/data-dsct'); % XXXX length of time series
 %%% Pink noise
 % Generate folder if it does not exist with the name of the process 
 pathToSave = path_folder
