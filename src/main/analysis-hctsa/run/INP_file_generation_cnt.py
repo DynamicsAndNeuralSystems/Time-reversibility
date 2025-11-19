@@ -46,7 +46,7 @@ print(REPO_DIR)
 REPO_MIN_DIR = Path(BASE_DIR).parents[3]
 print(REPO_MIN_DIR) 
 
-DATA_DIR = REPO_MIN_DIR / 'data-tr' / 'main-analysis' / 'time-series' / 'data-dsct'
+DATA_DIR = REPO_MIN_DIR / 'data-tr' / 'main-analysis' / 'time-series' / 'data-cnt'
 print(DATA_DIR)
 path_data= str(DATA_DIR)
 
