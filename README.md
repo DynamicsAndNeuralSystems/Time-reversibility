@@ -1,6 +1,6 @@
 # Identifying statistical indicators of temporal asymmetry using a data-driven approach
 This repository contains all code needed to reproduce analyses presented in our preprint "**Identifying statistical indicators of temporal asymmetry using a data-driven approach**". 
-Time series and pre-processesd data are openly available (**zenodo**).
+Time series and pre-processesd data are openly available ([zenodo](https://doi.org/10.5281/zenodo.17620039)).
 The repository also contains code for generating data and running the analysis from scratch.
 
 # Installation
