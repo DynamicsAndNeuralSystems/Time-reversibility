@@ -25,6 +25,7 @@ To install this repository and its dependencies, run the following in a terminal
     git clone git@github.com:teresa-dn/Time-reversibility.git
     cd Time-reversibility
     uv sync
+When selecting the python kernel, use the `.venv` generated which contains all the dependencies needed to run the code.
 
 # Usage
 ## 1. Using supplied pre-processed data to reproduce results
