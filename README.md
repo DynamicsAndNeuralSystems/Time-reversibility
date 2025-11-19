@@ -104,6 +104,7 @@ To run the analysis you need to have [_hctsa_](https://github.com/benfulcher/hct
     uv run src/main/analysis-hctsa/run/INP_file_generation_dsct.py
     uv run src/main/analysis-hctsa/run/INP_file_generation_cnt.py
 
+Specify the labels and the reversibility of the processes simulated in the variables `models` and `model_keywords` to include them in the INP files.
 **Set-up features**: input files with operations [INP_ops.txt](src/main/analysis-hctsa/run/INP_ops.txt) and [INP_mops.txt](src/main/analysis-hctsa/run/INP_mops.txt) for the _hctsa_ run.
 
 #### Step 2: run the _hctsa_ analysis
