@@ -17,6 +17,8 @@ import re
 from pathlib import Path
 
 # Define models and keywords for the input file INP_ts.txt
+
+# Define the model that were simulated
 models=['GNO', 'UNO', 'PINK', 'BROWN', 'VIOLET', # noises (R)
         'AR1_GNO', 'STAR_GNO', #    ARMA (R)
         'ARNOLD', 'CHIRIKOV', # Conservative chaotic maps (R)
@@ -27,6 +29,7 @@ models=['GNO', 'UNO', 'PINK', 'BROWN', 'VIOLET', # noises (R)
         'SINE_STOCH' # Other stochastic (I)
         ]
 
+# Define the model keywords for the models that were simulated
 model_keywords={'GNO': ['reversible'], 'UNO': ['reversible'], 'PINK': ['reversible'], 'BROWN': ['reversible'], 'VIOLET': ['reversible'],
                 'AR1_GNO': ['reversible'], 'STAR_GNO': ['reversible'],
                 'ARNOLD': ['reversible'], 'CHIRIKOV': ['reversible'],
