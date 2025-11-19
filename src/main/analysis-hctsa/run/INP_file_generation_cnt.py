@@ -17,13 +17,15 @@ import re
 from pathlib import Path
 
 # Define models and keywords for the input file INP_ts.txt
+
+# Define the model that were simulated
 models = ['BRW_cont','OU', 'Oscillator', 
               'LORENZ_SUM', 'ROSSLER_SUM', 
               'MACKEYGLASS17', 'VDP', 
               'LORENZ_STOCH_SUM',
                 'VDP_STOCH']
 
-
+# Define the model keywords for the models that were simulated
 model_keywords={ 'BRW_cont': ['reversible'], 'OU': ['reversible'], 'Oscillator': ['reversible'],
                  'LORENZ_SUM': ['irreversible'], 'ROSSLER_SUM': ['irreversible'],
                  'MACKEYGLASS17': ['irreversible'], 'VDP': ['irreversible'],
