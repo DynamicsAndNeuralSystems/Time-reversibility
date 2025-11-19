@@ -72,7 +72,7 @@ The notebook [6-inspect_good_features.ipynb](src/main/python/6-inspect_good_feat
 The notebook [7-plot_distributions.ipynb](src/main/python/7-plot_distributions.ipynb) contains an alternative plot of the distribution of $|\Delta f|$ per process.
 
 ### Robustness analysis
-Code for the analysis of the feature differences obtained from time series with diverse lengths can be found in [stc/robustness/python](src/robustness/python/).
+Code for the analysis of the feature differences obtained from time series with diverse lengths can be found in [src/robustness/python](src/robustness/python/).
 The plot below can be reproduced by running the [1-analysis_features.ipynb](src/robustness/python).
 <p align="center">
   <img src="src/figures-paper/Robustness.png" width="600">
